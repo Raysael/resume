@@ -1,0 +1,18 @@
+@import "fonts";
+@import "constants";
+* {
+	margin: 0;
+	padding: 0;
+}
+.cbalink {
+    display: none !important;
+}
+.wrapper {
+	margin: 38px / $width * 100vh;
+	box-sizing: border-box;
+	background-color: #f7f8da;
+}
+@import "header";
+@import "main";
+@import "footer";
+

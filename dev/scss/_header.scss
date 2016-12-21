@@ -1,0 +1,28 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	&__row {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: url("images/top.png") left top no-repeat;
+		background-size: cover;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 75px / $width * 100% 0 84px / $width * 100%;
+		z-index: 10;
+	}
+	&__title {
+		font-size: 313px / $width * 100vw;
+		text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+		color: #fff;
+		font-family: $fontHeader;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	&__subtitle {
+		@extend .header__title;
+		font-size: 146px / $width * 100vw;
+	}
+}

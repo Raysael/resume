@@ -1,0 +1,48 @@
+extends includes/template.pug
+block main	
+	main.main
+		.container.main__container.container_first
+			- var content = content_block_first
+			include includes/contentBlockTemplate.pug
+
+		.container.main__container.container_second
+			- var content = content_block_second
+			include includes/contentBlockTemplate.pug
+
+		.container.main__container.container_third
+			- var content = content_block_third
+			include includes/contentBlockTemplate.pug
+			
+		.container.main__container.container_fourth
+			- var content = content_block_fourth
+			include includes/contentBlockTemplate.pug
+
+		.contact-box.main__contact-box
+			.contact-box__rope.contact-box__rope_back
+			.contact-box__bubble-wrapper
+				.contact-box__sphere
+					.contact-box__hole
+					.contact-box__rope.contact-box__rope_front
+					h1.contact-box__title.contact-box__title_big contact me
+					for val in contactBoxs
+						if (val.website)
+							.contact-box__website-box
+								.contact-box__sphere_small
+									img.contact-box__icon(src= val.icon)
+								.contact-box__info
+									h4.contact-box__title= val.title
+									p.contact-box__website= val.website
+						else if (val.phone)
+							.contact-box__phone-box
+								.contact-box__sphere_small
+									img.contact-box__icon(src= val.icon)
+								.contact-box__info
+									h4.contact-box__title= val.title
+									p.contact-box__phone= val.phone
+						else
+							.contact-box__email-box
+								.contact-box__sphere_small
+									img.contact-box__icon(src= val.icon)
+								.contact-box__info
+									h4.contact-box__title= val.title
+									p.contact-box__email= val.email

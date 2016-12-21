@@ -1,0 +1,16 @@
+.footer {
+	background: url("images/footer.png") left top no-repeat;
+	background-size: cover;
+	box-sizing: border-box;
+	height: 413px / $width * 100vw;
+	position: relative;
+	&__photo {
+		background: url("images/photo.png") left top no-repeat;
+		background-size: cover;
+		width: 599px/ $width * 100vw;
+		height: 649px/ $width * 100vw;
+		bottom: 0;
+		margin-left: 50% - (300px / $width * 100%);
+		position: absolute;
+	}
+}

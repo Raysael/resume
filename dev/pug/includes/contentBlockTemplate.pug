@@ -1,0 +1,41 @@
+each val, index in content
+	if (index == 0)
+		.container__block.container__block_top
+			.container__sphere
+				img.icon.container__icon(src= val.icon)
+			h1.container__title= val.titleBig
+	if (index == 1)
+		if (val.list1)
+			.container__block.container__block_midle.container__block_lists
+				ul.container__list
+					for inVal in val.list1
+						li.list__item= inVal
+				ul.container__list
+					for inVal in val.list2
+						li.list__item= inVal
+		else 
+			.container__block.container__block_midle
+				if (val.subtitle)
+					h3.container__subtitle= val.subtitle
+					p.container__text= val.text
+				else
+					p.container__text= val.text
+	if (index == 2)			
+		if (val.list1)
+			.container__block.container__block_bottom.container__block_lists
+				ul.container__list
+					for inVal in val.list1
+						li.list__item= inVal
+				ul.container__list
+					for inVal in val.list2
+						li.list__item= inVal
+		else 
+			.container__block.container__block_bottom
+				if (val.subtitle)
+					h3.container__subtitle= val.subtitle
+					p.container__text= val.text
+				else if (val.subtitleBold)
+					h2.container__subtitle.container__subtitle_bold= val.subtitleBold
+					p.container__text.container__text_small= val.text
+				else
+					p.container__text= val.text	
