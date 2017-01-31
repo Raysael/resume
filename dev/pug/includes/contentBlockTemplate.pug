@@ -2,7 +2,10 @@ each val, index in content
 	if (index == 0)
 		.container__block.container__block_top
 			.container__sphere
-				img.icon.container__icon(src= val.icon)
+				.container__icon_front
+					img.icon.container__icon(src= val.icon)
+				.container__icon_back
+					img.icon.container__icon(src= val.iconBack)
 			h1.container__title= val.titleBig
 	if (index == 1)
 		if (val.list1)
@@ -22,7 +25,7 @@ each val, index in content
 					p.container__text= val.text
 	if (index == 2)			
 		if (val.list1)
-			.container__block.container__block_bottom.container__block_lists
+			.container__block.container__block_bottom.container__block_lists.hide
 				ul.container__list
 					for inVal in val.list1
 						li.list__item= inVal
@@ -30,7 +33,7 @@ each val, index in content
 					for inVal in val.list2
 						li.list__item= inVal
 		else 
-			.container__block.container__block_bottom
+			.container__block.container__block_bottom.hide
 				if (val.subtitle)
 					h3.container__subtitle= val.subtitle
 					p.container__text= val.text
@@ -38,4 +41,13 @@ each val, index in content
 					h2.container__subtitle.container__subtitle_bold= val.subtitleBold
 					p.container__text.container__text_small= val.text
 				else
-					p.container__text= val.text	
+					p.container__text= val.text
+	if (index == 3)
+		input(type='checkbox' id=`checkbox_${val}` class='container-button__checkbox hide')
+		label(for=`checkbox_${val}` onclick='chekSize(this)')
+			.container-button
+				.container-button__sides
+					.container-button__side.container-button__side_front 
+						p read more
+					.container-button__side.container-button__side_back 
+						p hide

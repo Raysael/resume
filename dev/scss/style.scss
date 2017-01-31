@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 }
+
 .cbalink {
     display: none !important;
 }
@@ -11,6 +12,9 @@
 	margin: 38px / $width * 100vh;
 	box-sizing: border-box;
 	background-color: #f7f8da;
+}
+body {
+	min-width: 320px;
 }
 @import "header";
 @import "main";

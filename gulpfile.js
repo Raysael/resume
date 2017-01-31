@@ -54,7 +54,7 @@ gulp.task('scripts', function(){
 var imagemin = require('gulp-imagemin');
 
 gulp.task('images', function(){
-	gulp.src('./dev/images/*.png')
+	gulp.src('./dev/images/*[.png, .gif, .jpg]')
 		.pipe(imagemin())
 		.pipe(gulp.dest('./site/images'))
 		.pipe(connect.reload());

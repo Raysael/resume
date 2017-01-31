@@ -13,4 +13,15 @@ html
 				.footer__photo
 	script.
 		//удаление рекламы хостинга после футера
-		document.body.querySelector('.cbalink').remove();
+		if (document.body.querySelector('.cbalink'))
+			document.body.querySelector('.cbalink').remove();
+		//
+		function chekSize(e) {
+		let elem = e.parentElement.children
+			//e.parentElement.children[2]
+			//console.log(e.parentElement.children[3])
+			if (!elem[3].checked)
+				elem[2].classList.remove('hide')
+			else
+				elem[2].classList.add('hide')
+		}

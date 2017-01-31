@@ -8,18 +8,15 @@ block main
 		.container.main__container.container_second
 			- var content = content_block_second
 			include includes/contentBlockTemplate.pug
-
-		.container.main__container.container_third
-			- var content = content_block_third
-			include includes/contentBlockTemplate.pug
-			
-		.container.main__container.container_fourth
-			- var content = content_block_fourth
-			include includes/contentBlockTemplate.pug
-
-		.contact-box.main__contact-box
-			.contact-box__rope.contact-box__rope_back
-			.contact-box__bubble-wrapper
+		.contact-box_wrap
+			.contact-box.main__contact-box
+				.contact-box__rope.contact-box__rope_back
+				.contact-box__bubble-wrapper
+				.contact-box__circles-wrapper
+					.contact-box__circle.contact-box__circle_top
+					.contact-box__circle.contact-box__circle_right
+					.contact-box__circle.contact-box__circle_bottom
+					.contact-box__circle.contact-box__circle_left
 				.contact-box__sphere
 					.contact-box__hole
 					.contact-box__rope.contact-box__rope_front
@@ -46,3 +43,11 @@ block main
 								.contact-box__info
 									h4.contact-box__title= val.title
 									p.contact-box__email= val.email
+
+		.container.main__container.container_third
+			- var content = content_block_third
+			include includes/contentBlockTemplate.pug
+			
+		.container.main__container.container_fourth
+			- var content = content_block_fourth
+			include includes/contentBlockTemplate.pug
