@@ -12,9 +12,11 @@
 	margin: 38px / $width * 100vh;
 	box-sizing: border-box;
 	background-color: #f7f8da;
+	overflow: hidden;
 }
 body {
 	min-width: 320px;
+	margin: 0 auto;
 }
 @import "header";
 @import "main";

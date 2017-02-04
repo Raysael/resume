@@ -2,7 +2,8 @@
 	display: flex;
 	justify-content: space-between;
 	position: relative;
-	background: #e7bf20;
+	background: radial-gradient(#e7bf20, #D2A224);
+	box-shadow: inset 0px 0px 30px 1px rgba(0, 0, 0, .1);
 	z-index: 10;
 	overflow: hidden;
 	&__row {
@@ -67,7 +68,7 @@
 			opacity: 0;
 		}
 		&_big-left {
-			background:#8cab14;
+			background: linear-gradient(0deg, #378A18, #8cab14, #378A18);
 			width: 30%;
 			z-index: 2;
 			transform: skewX(45deg);
@@ -84,6 +85,7 @@
 			margin: 0;
 			opacity: 0;
 			animation: leftSmall .7s 5.3s linear forwards;
+			background: linear-gradient(0deg, #378A18, #8cab14, #378A18);
 		}
 	}
 }

@@ -1,4 +1,4 @@
-each val, index in content
+for val, index in content
 	if (index == 0)
 		.container__block.container__block_top
 			.container__sphere
@@ -13,9 +13,10 @@ each val, index in content
 				ul.container__list
 					for inVal in val.list1
 						li.list__item= inVal
-				ul.container__list
-					for inVal in val.list2
-						li.list__item= inVal
+				if (val.list2)
+					ul.container__list
+						for inVal in val.list2
+							li.list__item= inVal
 		else 
 			.container__block.container__block_midle
 				if (val.subtitle)
@@ -24,30 +25,32 @@ each val, index in content
 				else
 					p.container__text= val.text
 	if (index == 2)			
-		if (val.list1)
-			.container__block.container__block_bottom.container__block_lists.hide
-				ul.container__list
-					for inVal in val.list1
-						li.list__item= inVal
-				ul.container__list
-					for inVal in val.list2
-						li.list__item= inVal
-		else 
-			.container__block.container__block_bottom.hide
-				if (val.subtitle)
-					h3.container__subtitle= val.subtitle
-					p.container__text= val.text
-				else if (val.subtitleBold)
-					h2.container__subtitle.container__subtitle_bold= val.subtitleBold
-					p.container__text.container__text_small= val.text
-				else
-					p.container__text= val.text
+			if (val.list1)
+				.container__block.container__block_bottom.container__block_lists.hide_size
+					ul.container__list
+						for inVal in val.list1
+							li.list__item= inVal
+					if (val.list2)
+						ul.container__list
+							for inVal in val.list2
+								li.list__item= inVal
+			else 
+				.container__block.container__block_bottom.hide_size
+					if (val.subtitle)
+						h3.container__subtitle= val.subtitle
+						p.container__text= val.text
+					else if (val.subtitleBold)
+						h2.container__subtitle.container__subtitle_bold= val.subtitleBold
+						p.container__text.container__text_small= val.text
+					else
+						p.container__text= val.text
 	if (index == 3)
-		input(type='checkbox' id=`checkbox_${val}` class='container-button__checkbox hide')
-		label(for=`checkbox_${val}` onclick='chekSize(this)')
-			.container-button
-				.container-button__sides
-					.container-button__side.container-button__side_front 
-						p read more
-					.container-button__side.container-button__side_back 
-						p hide
+		if (!content[2] == 0)
+			input(type='checkbox' id=`checkbox_${val}` class='container-button__checkbox hide')
+			label(for=`checkbox_${val}` onclick='chekSize(this)')
+				.container-button
+					.container-button__sides
+						.container-button__side.container-button__side_front 
+							p.container-button__text read more
+						.container-button__side.container-button__side_back 
+							p.container-button__text hide
