@@ -216,9 +216,13 @@
 	&__icon {
 		width: 45px / $width * 100vw;
 		height: auto;
-		&:last-of-type {
+		&_email {
 			height: 42px / $width * 100vw;
 			width: auto;
+		}
+		&_git {
+			width: 57px / $width * 100vw;
+			height: auto;
 		}
 	}
 	&__title {
@@ -230,6 +234,7 @@
 			color: #fff;
 			font-family: $fontTitle;
 			text-transform: uppercase;
+			margin: 10px / $width * 100vw 0 30px / $width * 100vw;
 		}
 	}
 	&__hole {
@@ -289,7 +294,7 @@
 	}
 	&__website-box {
 		width: 740px / $width * 100vw;
-		margin: 20px / $width * 100vw 0;
+		margin: 10px / $width * 100vw 0 10px / $width * 100vw 90px / $width * 100vw;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -300,15 +305,21 @@
 	&__email-box {
 		@extend .contact-box__website-box;
 	}
+	&__git-box {
+		@extend .contact-box__website-box;
+	}
 	&__website {
 		color: #fff;
-		font-size: 50px / $width * 100vw;
+		font-size: 45px / $width * 100vw;
 		font-weight: 700;
 	}
 	&__phone {
 		@extend .contact-box__website;
 	}
 	&__email {
+		@extend .contact-box__website;
+	}
+	&__git {
 		@extend .contact-box__website;
 	}
 }

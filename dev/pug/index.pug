@@ -36,13 +36,20 @@ block main
 								.contact-box__info
 									h4.contact-box__title= val.title
 									p.contact-box__phone= val.phone
-						else
+						else if (val.email)
 							.contact-box__email-box
 								.contact-box__sphere_small
-									img.contact-box__icon(src= val.icon)
+									img.contact-box__icon.contact-box__icon_email(src= val.icon)
 								.contact-box__info
 									h4.contact-box__title= val.title
 									p.contact-box__email= val.email
+						else
+							.contact-box__git-box
+								.contact-box__sphere_small
+									img.contact-box__icon.contact-box__icon_git(src= val.icon)
+								.contact-box__info
+									h4.contact-box__title= val.title
+									p.contact-box__git= val.git
 
 		.container.main__container.container_third
 			- var content = content_block_third
